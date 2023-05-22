@@ -3,7 +3,7 @@ import { useState } from "react";
 function Classroom() {
   // Composant Classroom
   // students  -> ici c'est le tableau de type array
-  // setClassroom
+  // setStudents
 
   const [name, setName] = useState("");
   const [students, setStudents] = useState([
