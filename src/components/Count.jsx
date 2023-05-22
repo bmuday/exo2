@@ -1,14 +1,22 @@
+import { useState } from "react";
+
 const Count = () => {
+  let [counter, setCounter] = useState(0);
+
   const countDown = () => {
-    console.log("down");
+    const newCounter = counter - 1;
+    setCounter(newCounter);
   };
 
   const countUp = () => {
-    console.log("up");
+    const newCounter = counter + 1;
+    setCounter(newCounter);
   };
   return (
     <div className="count">
-      <span onClick={countDown}>-</span>0<span onClick={countUp}>+</span>
+      <span onClick={countDown}>-</span>
+      {counter}
+      <span onClick={countUp}>+</span>
     </div>
   );
 };
