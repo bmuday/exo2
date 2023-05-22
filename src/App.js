@@ -1,15 +1,9 @@
-import { useState } from "react";
+import Classroom from "./components/Classroom";
 
 function App() {
-  const [name, setName] = useState("Ihechikara");
-  const changeName = () => {
-    setName("Chikara");
-  };
-
   return (
     <div>
-      <p>My name is {name}</p>
-      <button onClick={changeName}> Click me </button>
+      <Classroom />
     </div>
   );
 }
