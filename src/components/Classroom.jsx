@@ -5,6 +5,7 @@ function Classroom() {
   // students  -> ici c'est le tableau de type array
   // setClassroom
 
+  const [name, setName] = useState("");
   const [students, setStudents] = useState([
     { id: 1, name: "Li" },
     { id: 2, name: "Isabelle" },
@@ -13,14 +14,23 @@ function Classroom() {
 
   const addStudent = (e) => {
     e.preventDefault();
-    console.log("Valeur du champ", e.target);
+    console.log("Valeur du champ", name);
+    // Mise à jour du state
+    setStudents([...students, { id: students.length + 1, name: name }]);
   };
+
+  console.log("students", students);
 
   return (
     <div>
       <h1>Classroom</h1>
-      <form onSubmit={(e) => addStudent(e)}>
-        <input type="text" placeholder="Entrer le nom" />
+      <form onSubmit={addStudent}>
+        <input
+          type="text"
+          placeholder="Entrer le nom"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <button type="submit">Ajouter une étudiante</button>
       </form>
       <ul>
