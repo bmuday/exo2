@@ -1,28 +1,26 @@
-import { useState } from "react";
+import { useState } from "react"; // React Hook = fonction réutilisable
 
-function Classroom() {
+function Classroom({ students, setStudents }) {
   // Composant Classroom
+  // name -> le nom de l'étudiant à ajouter
   // students  -> ici c'est le tableau de type array
-  // setStudents
+  // number -> le nombre d'étudiants
 
   const [name, setName] = useState("");
-  const [students, setStudents] = useState([
-    { id: 1, name: "Li" },
-    { id: 2, name: "Isabelle" },
-    { id: 3, name: "Amandine" },
-  ]);
 
   const addStudent = (e) => {
-    e.preventDefault();
-    console.log("Valeur du champ", name);
+    e.preventDefault(); // Empêche le comportement par défaut du formulaire qui est le rafraichissement de la page lors du submit
     // Mise à jour du state
-    setStudents([...students, { id: students.length + 1, name: name }]);
+    setStudents([...students, { id: students.length + 1, name }]);
+    setName("");
   };
 
-  console.log("students", students);
+  //   setTimeout(() => {
+  //     console.log("test");
+  //   }, 2000); // 2000 ms = 2s
 
   return (
-    <div>
+    <div id="classroom">
       <h1>Classroom</h1>
       <form onSubmit={addStudent}>
         <input
