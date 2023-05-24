@@ -21,7 +21,7 @@ function Classroom({ students, setStudents }) {
 
   return (
     <div id="classroom">
-      <h1>Classroom</h1>
+      <h2>Classroom</h2>
       <form onSubmit={addStudent}>
         <input
           type="text"

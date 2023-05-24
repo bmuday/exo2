@@ -15,6 +15,6 @@ hr {
   margin: 50px auto;
 }
 
-.count span {
+#count span {
   cursor: pointer;
 }

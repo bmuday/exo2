@@ -19,16 +19,18 @@ const Count = () => {
   };
 
   const countUp = () => {
-    console.log("test", test);
     const newCounter = counter + 1;
     setCounter(newCounter);
   };
 
   return (
-    <div id="count">
-      <span onClick={countDown}>-</span>
-      {counter}
-      <span onClick={countUp}>+</span>
+    <div>
+      <h2>Counter</h2>
+      <div id="count">
+        <span onClick={countDown}>-</span>
+        {counter}
+        <span onClick={countUp}>+</span>
+      </div>
     </div>
   );
 };
